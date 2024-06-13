@@ -5,6 +5,7 @@ import { AuthUser } from '@/actions/user';
 export default async function Home() {
   const user = await AuthUser();
   console.log(user);
+  if (!user.success) return { redirect: '/sign-in' };
   return (
     <div>
       <h1>Next14 - Authentication</h1>
