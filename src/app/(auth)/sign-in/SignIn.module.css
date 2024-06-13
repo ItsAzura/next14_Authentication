@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.container h1 {
+  margin-bottom: 20px;
+  font-size: 36px;
+  text-shadow: 0px 0px 5px #fff;
+}
+
+.container form {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  gap: 12px;
+}
+
+.container form label {
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.container form input {
+  margin-bottom: 10px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.container form button {
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 16px;
+}
