@@ -9,16 +9,16 @@ export const middleware = async (req) => {
 
   //lấy token từ cookie
   const getCookies = cookies();
-  const token = getCookies['token']?.value || '';
+  const token = getCookies.get('token')?.value || '';
 
   //Nếu đường dẫn là public và token tồn tại thì chuyển hướng về trang chính
   if (publicPaths && token !== '') {
-    return NextResponse.redirect('/', req.nextUrl);
+    return NextResponse.redirect(new URL('/', req.nextUrl));
   }
 
   //Nếu đường dẫn không phải là public và token không tồn tại thì chuyển hướng về trang đăng nhập
   if (!publicPaths && token === '') {
-    return NextResponse.redirect('/sign-in', req.nextUrl);
+    return NextResponse.redirect(new URL('/sign-in', req.nextUrl));
   }
 };
 

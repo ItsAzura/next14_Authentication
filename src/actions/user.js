@@ -137,3 +137,24 @@ export const AuthUser = async () => {
     };
   }
 };
+
+//Hàm đăng xuất
+export const signOutUser = async () => {
+  try {
+    //Xóa token khỏi cookie
+    const getCookies = cookies();
+    getCookies.set('token', '', { httpOnly: true });
+
+    return {
+      success: true,
+      message: 'User logged out successfully',
+    };
+  } catch (error) {
+    console.log(error);
+    return {
+      success: false,
+      error: 'Something went wrong',
+      message: 'Something went wrong! please try again',
+    };
+  }
+};
